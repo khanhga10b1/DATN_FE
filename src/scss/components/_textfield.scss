@@ -1,0 +1,43 @@
+@import "../utilities/mixins";
+
+.text {
+  font-family: Rubik;
+  margin-bottom: 0.5rem;
+  height: 40px;
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #032A40;
+  border-radius: 5px;
+  display: block;
+  outline: none;
+  width: 100%;
+  background: #F9FAFF;
+  border: 1px solid #E0E7FF;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    box-shadow: 2px 3px 10px -2px #E0E7FF;
+  }
+
+  &:focus {
+    border: 1.5px solid #d0dbff;
+  }
+
+  &--disabled {
+    background: #F7F9F9;
+    border: 1px solid #B3BFC6;
+    cursor: not-allowed;
+    color: #748A96;
+  }
+
+  &--error {
+    border: 1px solid #FF4A5E;
+    color: #FF4A5E;
+  }
+}
+
+.textarea {
+  height: auto;
+}

@@ -1,0 +1,17 @@
+.progress-bar{
+  width: 100%;
+  height: 40px;
+  position: relative;
+  &__percent {
+    background-color: #ff893936;
+    border: 1px solid #ff893980;
+    height: 100%;
+  }
+  &__text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    color: black;
+    font-weight: 500;
+  }
+}

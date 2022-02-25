@@ -1,0 +1,46 @@
+@import '../utilities/mixins';
+
+.sidebar {
+  .search_block {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .search_form {
+      position: relative;
+      width: 100%;
+
+      &__input {
+        background: #8cadfb24;
+        border-radius: 5px;
+        border: none;
+        height: 32px;
+        padding-left: 32px;
+        padding-right: 5px;
+        outline: none;
+        width: 100%;
+        border: 1px solid #566ec729;
+      }
+
+      &__button {
+        @include abs-position(0, 0, 0, 0);
+        width: 32px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 0;
+      }
+
+      &__icon {
+        width: 11px;
+      }
+    }
+  }
+}

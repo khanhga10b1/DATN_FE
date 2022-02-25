@@ -1,0 +1,9 @@
+table {
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+tr {
+  cursor: pointer;
+}

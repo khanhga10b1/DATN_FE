@@ -1,0 +1,12 @@
+// If you want to override variables do it here
+@import "./variables";
+
+//utilies
+
+@import "utilities/mixins";
+
+// If you want to add something do it here
+@import "custom";
+
+// components
+@import "components/pagination";

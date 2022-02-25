@@ -1,0 +1,13 @@
+.Status {
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 4px;
+  &--release {
+    background: #2ed47a33;
+    color: #20B363;
+  }
+  &--inProgress {
+    color: #FF8939;
+    background: #ff893936;
+  }
+}

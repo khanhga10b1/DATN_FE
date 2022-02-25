@@ -1,0 +1,38 @@
+.basic_infor {
+  width: fit-content;
+}
+
+.card__text {
+  margin: auto 0;
+  font-size: 14px;
+  line-height: 18px;
+  margin-right: 1rem;
+
+}
+
+.text--graybold {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+
+  color: #6E8CA3;
+}
+
+.text--head3 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #0E3F66;
+}
+
+.text--thin {
+  color: #404040;
+}
+
+.text--bold {
+  font-weight: bold;
+  align-items: center;
+  color: #0E3F66;
+}

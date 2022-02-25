@@ -1,0 +1,73 @@
+@mixin overview_page {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .search_block {
+    display: flex;
+    justify-content: space-between;
+
+    .search_text {
+      margin: auto 10px;
+    }
+
+    .search_form {
+      position: relative;
+      width: 280px;
+
+      &__input {
+        background: #fff;
+        border-radius: 9999px;
+        border: none;
+        height: 32px;
+        padding-left: 32px;
+        padding-right: 5px;
+        outline: none;
+        width: 100%;
+        border: 1px solid #ccc;
+      }
+
+      &__button {
+        @include abs-position(0, 0, 0, 0);
+        width: 32px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 0;
+      }
+
+      &__icon {
+        width: 11px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    color: #333;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 16px;
+  }
+
+  table {
+    tr {
+      td {
+        a {
+          text-decoration: underline;
+
+          &:hover {
+            color: #00b4b7;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.col1 {
+  width: 50%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.form-group {
+  margin: 2px 0 10px 0 !important;
+  padding-bottom: 7px;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.input-group {
+  position: relative;
+  /* display: table; */
+  border-collapse: separate;
+}
+.input-group .input-group-addon {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 6px 12px;
+  text-align: center;
+  border-radius: 4px;
+  display: table-cell;
+  line-height: 52px;
+    height: 52px;
+    margin: auto;
+}
+.form-group label {
+  font-size: inherit !important;
+  max-width: 100%;
+  margin-bottom: 5px;
+}

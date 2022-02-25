@@ -1,0 +1,15 @@
+.arrow_icon {
+  transition: 0.5s ease;
+
+  &--rotate {
+    transform: rotateZ(180deg);
+  }
+}
+
+.card__component{
+  &--hide{
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+}

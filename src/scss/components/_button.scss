@@ -1,0 +1,150 @@
+.btn {
+  position: relative;
+  overflow: hidden;
+  width: 244.7px;
+  height: 35px;
+  background: #00B4B7;
+  border-radius: 4px;
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  a {
+    color: #ffffff;
+  }
+
+  &--small {
+    width: 4rem;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--action-view {
+    border: 1px solid #0E3F66;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #ffffff !important;
+    font-weight: 600;
+    font-size: 12px;
+    height: 40px;
+    width: fit-content;
+    color: #0E3F66; 
+    width: 100%;
+    
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    span {
+      margin: auto 0.5rem;
+    }
+
+  }
+
+  &--fit-content {
+    width: fit-content;
+    padding: 0 4rem;
+  }
+
+  &--primary {
+    background-color: #FF8939;
+
+    &:hover {
+      box-shadow: 2px 3px 10px -2px #FF8939;
+    }
+  }
+
+  &--secondary {
+    background: #0E3F66;
+    color: #ffffff;
+
+    &:hover {
+      &:hover {
+        box-shadow: 2px 3px 10px -2px #FF8939;
+      }
+    }
+  }
+
+  &--disabled {
+    color: #FFFFFF;
+    background: #8798AD !important;
+    pointer-events: none;
+    box-shadow: 2px 3px 10px -2px #ccc;
+  }
+
+  &--light {
+    background: #E6EAEC;
+    color: #1C3F53;
+
+    &:hover {
+      background: #F2F4F5;
+    }
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--warning {
+    background-color: #da1e30;
+
+    :hover {
+      opacity: 0.8;
+    }
+  }
+
+  &--normal {
+    background-color: #0E3F66;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &--info {
+    background-color: #007bff;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+  background-color: #00b4b7;
+}
+
+parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.parent .ripple-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes ripple {
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}

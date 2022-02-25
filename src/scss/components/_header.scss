@@ -1,0 +1,86 @@
+.site-header {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 26px;
+  color: #ffffff;
+  font-size: 14px;
+  background-color: #0E3F66;
+  height: 60px;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+
+  &__left {
+    height: 100%;
+    align-items: center;
+    display: flex;
+
+    .date {
+      margin-left: 50px;
+      font-size: 13px;
+    }
+
+    .site-logo {
+      width: 180px;
+      margin-top: 10px;
+    }
+
+    .header__nav {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 50px;
+      user-select: none;
+
+      &__item {
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        font-weight: 600;
+        transition: 0.3s ease-in-out;
+        align-items: center;
+        padding: 0 21px;
+
+        &.active {
+          border-bottom: 5px solid #ff893a;
+          background: rgba(255, 137, 57, 0.2);
+
+          &:hover {
+            background: rgba(255, 137, 57, 0.3);
+          }
+  
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+      }
+
+      img {
+        max-width: 14px;
+        margin-right: 10px;
+      }
+
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    .user {
+      margin-right: 60px;
+      font-size: 13px;
+    }
+
+    .actions {
+
+      .menu {
+        margin-right: 22px;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.Pagination {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  & > li {
+    list-style: none;
+    &:not(.break-me) a {
+      border: 1px solid #ccc;
+      height: 30px;
+      line-height: 28px;
+      min-width: 30px;
+      margin: 2px;
+      padding: 0 6px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.25s linear;
+      &:hover {
+        background: #4ab5b7;
+        border-color: #4ab5b7;
+        color: #fff;
+      }
+    }
+    &.active a {
+      background: #4ab5b7;
+      border-color: #4ab5b7;
+      color: #fff;
+    }
+  }
+}

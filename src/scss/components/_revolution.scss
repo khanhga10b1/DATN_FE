@@ -1,0 +1,11 @@
+.revolution{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: start;
+  &__text {
+    margin: auto;
+    color: black;
+    font-weight: 500;
+  }
+}

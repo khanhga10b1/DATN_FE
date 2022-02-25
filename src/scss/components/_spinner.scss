@@ -1,0 +1,61 @@
+@import "../variables";
+@import "../utilities/mixins";
+
+.spin {
+  @include fill_window;
+  z-index: $zHighAbove;
+  display: block;
+  opacity: 1;
+  background-color: #f8f9fab5;
+
+  &__area {
+    @include abs-position(50%, auto, auto, 50%);
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: -10px;
+
+    div {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2895d8;
+      animation: spinner 1.2s linear infinite;
+
+      &:nth-child(1) {
+        top: 8px;
+        left: 8px;
+        animation-delay: 0s;
+      }
+
+      &:nth-child(2) {
+        top: 8px;
+        left: 18px;
+        animation-delay: -0.4s;
+      }
+
+      &:nth-child(3) {
+        top: 18px;
+        left: 18px;
+        animation-delay: -0.8s;
+      }
+
+      &:nth-child(4) {
+        top: 18px;
+        left: 8px;
+        animation-delay: -0.4s;
+      }
+    }
+  }
+}
+
+@include keyframes(spinner) {
+  0%,
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

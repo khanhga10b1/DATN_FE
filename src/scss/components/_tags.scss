@@ -1,0 +1,265 @@
+.msl {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #9AAAB3;
+  border-radius: var(--border-radius);
+  outline: none;
+  min-height: 40px;
+  cursor: text;
+  background: rgba(224, 231, 255, 0.2);
+  border: 1px solid #E0E7FF;
+  svg {
+    width: 17px;
+    height: 17px;
+    color: #0e3f6694;
+  }
+
+  &-active {
+    border-color: #00B4B7;
+    box-shadow: 0px 0px 3px 2px #00b4b75e;
+    z-index: 999;
+    border-radius: var(--border-radius);
+  }
+
+  &-flx {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &-vars {
+    --menu-max-height: 400px;
+    --font-size: 18px;
+    --border-radius: 5px;
+    --transition: 200ms;
+    --menu-shadow: 1px 1px 5px 0px gray;
+    --option-bg-hover: rgb(233, 233, 233);
+  }
+
+  &-wrp {
+    position: relative;
+  }
+
+  &-disabled {
+    pointer-events: none !important;
+
+    &>.msl {
+      background-color: rgb(246, 246, 246);
+    }
+  }
+
+  &-input {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    background: transparent;
+    outline: none;
+    margin: 5px;
+    line-height: 1;
+    padding: 3px;
+    font-size: var(--font-size);
+
+    &-wrp {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &::before {
+      line-height: 1;
+      color: rgb(146, 146, 146);
+    }
+  }
+
+  &-chip {
+    color: #0E3F66;
+    font-weight: 500;
+    background: #2ea2ff2b;
+    border-radius: calc(var(--border-radius) - 3px);
+    margin: 5px;
+    padding: 3px 3px 3px 6px;
+    white-space: nowrap;
+    font-size: var(--font-size);
+    display: inline-flex;
+    align-items: center;
+    line-break: anywhere;
+    white-space: break-spaces;
+
+    &-delete {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
+      margin-left: 3px;
+      background: rgb(218, 218, 218);
+
+      &:hover {
+        background: lightgray;
+      }
+
+      .msl-close-icn {
+        transform: scale(0.6);
+      }
+    }
+  }
+
+  &-close-icn {
+    height: 18px;
+    width: 18px;
+  }
+
+  &-single-value {
+    display: inline-block;
+    margin: 5px;
+    padding: 3px;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--font-size);
+    line-break: strict;
+    white-space: nowrap;
+  }
+
+  &-options {
+    position: absolute;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background: white;
+    max-height: 0;
+    z-index: 999;
+    transition: max-height 100ms ease-in;
+    transform: translateY(10px);
+  }
+
+  &-option {
+    &-active {
+      background: #e6f4fa;
+      color: #00B4B7;
+    }
+
+    &-disable {
+      color: hsla(0, 0%, 0%, 0.3);
+    }
+  }
+
+  &-grp-title {
+    font-size: calc(var(--font-size) - 2px);
+    cursor: default;
+    background: #fafafa;
+    opacity: 0.7;
+  }
+
+  &-btn {
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 0;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  &-actions {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translatey(-50%);
+  }
+
+  &-arrow-icn {
+    height: 20px;
+    width: 20px;
+    transform: scale(0.8);
+  }
+
+
+}
+
+.msl:not(.msl-active) {
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 3px 5px 1px #ccc;
+  }
+
+}
+
+.msl-active~.msl-options {
+  box-shadow: var(--menu-shadow);
+  clip-path: inset(0px -10px -10px -10px);
+  max-height: var(--menu-max-height);
+}
+
+
+.msl-input[data-placeholder]:not([data-placeholder=""]):empty::before {
+  content: attr(data-placeholder);
+}
+
+.msl-options::-webkit-scrollbar {
+  width: 8px;
+}
+
+.msl-options::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.msl-options::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.msl-options::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 0, 0.2);
+}
+
+.msl-options>.msl-option,
+.msl-grp-title {
+  font-size: var(--font-size);
+  border-radius: calc(var(--border-radius) - 3px);
+  padding: 7px 5px;
+  cursor: pointer;
+  margin: 4px 6px 4px;
+  line-break: anywhere;
+  line-height: 1.2;
+  white-space: break-spaces;
+  transition: background 200ms;
+}
+
+.msl-options>.msl-option:last-child {
+  margin-bottom: 5px;
+}
+
+.msl-options>.msl-option:hover {
+  background: var(--option-bg-hover);
+}
+
+.msl-arrow-btn,
+.msl-clear-btn {
+  width: 25px;
+  height: 25px;
+  transition: transform var(--transition);
+}
+
+.msl-clear-btn .msl-close-icn {
+  transform: scale(0.7);
+}
+
+.msl-clear-btn:hover,
+.msl-arrow-btn:hover {
+  background: lightgray;
+}
+
+.msl-close-icn>line,
+.msl-arrow-icn>line {
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke: rgb(0, 0, 0.6);
+}
+
+.msl-chip-delete .msl-close-icn>line {
+  stroke-width: 1;
+}
+
+.tag--selected {
+  background-color: lightgray;
+
+}

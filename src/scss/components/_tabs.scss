@@ -1,0 +1,94 @@
+.react-tabs {
+
+  &__tab-panel {
+    &--selected {
+      transform: translateX(0) !important;
+      transition: 0.35s ease;
+
+    }
+  }
+
+  .tab__highlight {
+    height: 3px;
+    transform: translateY(-1px);
+    width: 140px;
+    background: #FF8939;
+    position: absolute;
+    margin-left: 0;
+    -webkit-transition: 0.25s ease;
+    transition: 0.25s ease;
+    bottom: -3px;
+  }
+    &__tab-list{
+      border-color:rgba(115, 129, 143, 0.76);
+      margin-bottom: 2.3rem;
+    }
+
+    &__tab{
+      border: 0;
+      border-bottom: 2px solid transparent ;
+      color: #0E3F66;
+      font-size: 18px;
+      margin-right: 2rem;
+
+      &--selected{
+        color: #69707F;
+        border-bottom: 2px solid #FF8939 ;
+        background: transparent;
+      }
+
+    }
+    .useraccount_profiledetail{
+      .profile-img{
+        margin-bottom: 1rem;
+        box-shadow: -4px 5px 8px rgba(67, 86, 100, 0.123689), -1px 2px 4px rgba(67, 86, 100, 0.10047);
+      }
+      .user-status{
+        color: #6E8CA3;
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-right: 2rem;
+     margin-top: 1rem;
+      }
+      .status-btn{
+        background-color: #E0F1FF;
+        padding: 4px 2rem;
+        color:#007bff;
+        margin-top: 1rem;
+      }
+    }
+    .useraccount_formbox{
+      .editbtn{
+        padding: 6px 1rem;
+        border-radius: 6px;
+      }
+    }
+  .userpassword_formbox{
+    label{
+      margin: 1rem 0;
+    }
+    .form-group{
+      margin-bottom: 3rem;
+    }
+  }
+    .security_box{
+      height: 100%;
+      @media(max-width:767px){
+        height: auto;
+      }
+      .form-group{
+        margin-bottom: 3rem;
+      }
+      .deleteaccountbox{
+        padding-left: 4rem;
+      }
+      .textbox{
+        margin-left: 3rem;
+        .small{
+          color: #748A96;
+        }
+  
+      }
+    }
+  }

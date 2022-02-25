@@ -1,0 +1,15 @@
+.small-card {
+  padding: 0.5em 0.75rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  min-width: 100px;
+  width: fit-content;
+  max-height: 40px;
+  .status-label {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 15px;
+  }
+}
