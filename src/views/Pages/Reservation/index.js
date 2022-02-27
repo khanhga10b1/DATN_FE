@@ -143,8 +143,8 @@ const ReservationData = ({ reservation, onNext }) => {
                 <div className="col-6 no-padding justify-flex-end">
                   <label style={{ marginRight: "20px" }}>Bao gồm </label>
                   <span>
-                    {reservation.guests.adult} Người lớn -{" "}
-                    {reservation.guests.children} Trẻ em
+                    {reservation.adult} Người lớn -{" "}
+                    {reservation.children} Trẻ em
                   </span>
                 </div>
               </div>
@@ -165,21 +165,21 @@ const ReservationData = ({ reservation, onNext }) => {
               <div className="col-6">
                 <div className="row">
                   <label style={{ marginRight: "10px" }}>Tên: </label>
-                  <span>{reservation.infor.name}</span>
+                  <span>{reservation.name}</span>
                 </div>
                 <div className="row">
                   <label style={{ marginRight: "10px" }}>Email: </label>
-                  <span>{reservation.infor.email}</span>
+                  <span>{reservation.email}</span>
                 </div>
               </div>
               <div className="col-6">
                 <div className="row">
                   <label style={{ marginRight: "10px" }}>Địa chỉ: </label>
-                  <span>{reservation.infor.address}</span>
+                  <span>{reservation.address}</span>
                 </div>
                 <div className="row">
                   <label style={{ marginRight: "10px" }}>Số điện thoại: </label>
-                  <span>{reservation.infor.phone}</span>
+                  <span>{reservation.phone}</span>
                 </div>
               </div>
             </div>
@@ -206,12 +206,15 @@ const Payment = ({ reservation, onPrevious, onNext }) => {
   const [loading, setLoading] = useState(false);
   const paymentHandler = (details, data) => {
     setLoading(true);
+    const requestData = Object.assign({roomId: reservation.room.id, hotelId: reservation.hotel.id}, reservation);
+    delete  requestData.hotel;
+    delete  requestData.room;
     service
-      .post("/reservations", reservation)
+      .post("/reservations", requestData)
       .then((res) => {
         setLoading(false);
         service
-          .post("/reservations/mail", reservation)
+          .post("/reservations/mail", requestData)
           .then((res) => res)
           .catch((e) => console.log(e));
         onNext();

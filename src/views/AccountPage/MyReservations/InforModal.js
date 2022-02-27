@@ -77,9 +77,9 @@ const InforModal = ({ selectedRow, show, handleClose, rooms }) => {
                 <div className="col-6 no-padding justify-flex-end">
                   <label style={{ marginRight: "20px" }}>Khách</label>
                   <span>
-                    {selectedRow.guests.adult}{" "}
+                    {selectedRow.adult}{" "}
                     người lớn-{" "}
-                    {selectedRow.guests.children} trẻ em
+                    {selectedRow.children} trẻ em
                   </span>
                 </div>
               </div>

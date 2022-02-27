@@ -13,7 +13,7 @@ const PayPalBtn = ( { amount, onSuccess, currency } ) => {
       options={{
         clientId:
           user.paypalId ||
-          "AcQmp0g49rhE_ZVizX5a6pSPdHYnFrC-Bck3eXtZjYyCZELhi8ETi0Zdnmq7pMg7xlhHB_CbS0poRmxq",
+          "AbB5uClbyGGBMog5UVj8VUuQjTxX6G_c9QIODaCQqX76kCqk9X0cajhQVuJRZrYb5f9Gh-jxe8VFq3D9",
       }}
     />
   );

@@ -93,11 +93,11 @@ const Reservations = () => {
     setLoading(true);
 
     await service
-      .get("reservations/filter", {
+      .get("/reservations/filter", {
         params: {
             hotelId: hotels[0].id,
             status: filterStatus,
-            room: filterRoom,
+            roomIds: filterRoom?.map(room => room.id).join(","),
             checkInFrom: checkInFrom,
             checkInTo: checkInTo,
             checkOutFrom: checkOutFrom,
@@ -263,9 +263,9 @@ const Reservations = () => {
                   <div className="col-6 no-padding justify-flex-end">
                     <label style={{ marginRight: "20px" }}>Khách</label>
                     <span>
-                      {selectedRow.guests.adult}{" "} người lớn -{" "}
+                      {selectedRow.adult}{" "} người lớn -{" "}
  -{" "}
-                      {selectedRow.guests.children} trẻ em
+                      {selectedRow.children} trẻ em
                     </span>
                   </div>
                 </div>

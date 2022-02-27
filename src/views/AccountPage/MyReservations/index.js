@@ -81,7 +81,7 @@ const MyReservations = () => {
   const onSearchRequestHandler = async () => {
     setLoading(true);
     await service
-      .get("reservations/filter", {
+      .get("/reservations/filter", {
         params: {
             customerId : user.id, 
             checkInFrom: checkInFrom,

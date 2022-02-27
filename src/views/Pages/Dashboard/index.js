@@ -13,6 +13,8 @@ import {
 import DateFnsUtils from "@date-io/date-fns";
 import service from "../../../service/service";
 import { setReservation } from "../../../redux/reducers/reservations/actions";
+import {dateWithOutTime} from "../../../utils/dateUtil";
+
 
 const Dashboard = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -70,8 +72,12 @@ const Dashboard = () => {
                   label="Check In"
                   value={startDate}
                   name="checkInFrom"
+                  disablePast
                   format="dd/MM/yyyy"
                   onChange={(date) => {
+                    if(dateWithOutTime(date) > dateWithOutTime(endDate)){
+                      setEndDate(date)
+                    }
                     setStartDate(date);
                   }}
                   KeyboardButtonProps={{
@@ -89,8 +95,12 @@ const Dashboard = () => {
                   value={endDate}
                   name="checkInFrom"
                   format="dd/MM/yyyy"
+                  disablePast
                   onChange={(date) => {
                     setEndDate(date);
+                  }}
+                  shouldDisableDate={d => {
+                    return dateWithOutTime(d) < dateWithOutTime(startDate);
                   }}
                   KeyboardButtonProps={{
                     "aria-label": "change date",

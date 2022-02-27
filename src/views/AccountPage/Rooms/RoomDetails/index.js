@@ -51,10 +51,10 @@ const RoomDetails = ({ hotels, room, setView = () => {}, ...props }) => {
   useEffect(() => {
     set_loading(true);
     service
-      .get("reservations/filter", {
+      .get("/reservations/filter", {
         params: {
-            room: room.id,
-            status: ["waiting", "confirmed"],
+            roomIds: room.id,
+            status: "waiting,confirmed",
         },
       })
       .then((response) => {

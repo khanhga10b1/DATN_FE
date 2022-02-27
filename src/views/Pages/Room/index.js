@@ -5,7 +5,7 @@ import moment from "moment";
 
 import service from "../../../service/service";
 import { Spinner, TextArea, TextField } from "../../../components";
-import { diffDays } from "../../../utils/dateUtil";
+import {dateWithOutTime, diffDays} from "../../../utils/dateUtil";
 import { useDispatch, useSelector } from "react-redux";
 import { setReservation } from "../../../redux/reducers/reservations/actions";
 import { useHistory } from "react-router-dom";
@@ -81,12 +81,10 @@ const Room = (props) => {
     e.preventDefault();
     dispatch(
       setReservation({
-        infor: {
-          name,
-          address,
-          email,
-          phone,
-        },
+        name,
+        address,
+        email,
+        phone,
         customerId: user?.id,
         code: randomString(15),
         checkIn: moment(startDate).format("DD/MM/YYYY"),
@@ -96,10 +94,8 @@ const Room = (props) => {
         room: room,
         note: note || "No Note",
         diffDays: diffDays(startDate, endDate),
-        guests: {
           adult,
-          children,
-        },
+          children
       })
     );
     service
@@ -230,14 +226,22 @@ const Room = (props) => {
                       <div className="col-6" style={{ paddingLeft: "0" }}>
                         <label className="row">Check in</label>
                         <DatePicker
+                            minDate={new Date()}
+                            disablePast={true}
                           selected={startDate}
-                          onChange={(date) => setStartDate(date)}
+                          onChange={(date) => {
+                            if(dateWithOutTime(date) > dateWithOutTime(endDate)){
+                              setEndDate(date)
+                            }
+                            setStartDate(date);
+                          }}
                         />
                       </div>
 
                       <div className="col-6 no-padding">
                         <label className="row">Check out</label>
                         <DatePicker
+                            minDate={startDate}
                           selected={endDate}
                           onChange={(date) => setEndDate(date)}
                         />

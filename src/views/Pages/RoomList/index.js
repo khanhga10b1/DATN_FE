@@ -23,6 +23,12 @@ const RoomList = () => {
     getRooms();
   }, [sort]);
 
+  const handleEnter = (e) => {
+      if(e.key === "Enter") {
+          getRooms();
+      }
+  }
+
   const getRooms = () => {
     set_loading(true);
     service
@@ -54,7 +60,8 @@ const RoomList = () => {
             <TextField
               value={search}
               placeholder="Tìm kiếm"
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => {setSearch(e.target.value)}}
+              onKeyPress={handleEnter}
               InputProps={{
                 endAdornment: (
                   <div className="toggle-password" onClick={getRooms}>
