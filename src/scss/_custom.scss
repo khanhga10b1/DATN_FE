@@ -2563,6 +2563,10 @@ $price-tag-dot-background: #fff;
   width: fit-content;
   min-width: 800px;
 
+  .card_label {
+    flex: 0.25;
+  }
+
   .row {
     margin-bottom: 2rem;
 

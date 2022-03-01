@@ -1,4 +1,5 @@
 export const cityList = [
+    "",
   "Tiền Giang",
   "Hưng Yên",
   "Hà Nội",

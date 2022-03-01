@@ -256,7 +256,7 @@ const Payment = ({ reservation, onPrevious, onNext }) => {
       )}
       <div
         className="row justify-flex-start"
-        style={{ maxWidth: "1300px", margin: "20px auto" }}
+        style={{ maxWidth: "1300px", margin: "20px 0px" }}
       >
         <Button onClick={onPrevious} style={{ width: "100px" }}>
           Trở về

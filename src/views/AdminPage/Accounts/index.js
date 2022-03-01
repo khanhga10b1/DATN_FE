@@ -88,17 +88,18 @@ const Accounts = () => {
           <td>{_item.linked ? "Tài khoản Google" : "Tài khoản The K"}</td>
           <td>
             <SmallCard
+                onClick={() => set_confirm(_item)}
               background={mappingStatus(_item.status ? "Active" : "Blocked").bg}
               color={mappingStatus(_item.status ? "Active" : "Blocked").color}
               margin="auto"
             >
-              <span className="status-label" onClick={() => set_confirm(_item)}>
+              <span className="status-label">
                 {_item.status ? "Active" : "Blocked"}
               </span>
             </SmallCard>
           </td>
-          <td>{moment(_item.created).format("DD/MM/YYYY")}</td>
-          <td>{moment(_item.updatedAt).format("DD/MM/YYYY")}</td>
+          <td>{moment(_item.createdDate).format("DD/MM/YYYY")}</td>
+          <td>{moment(_item.updatedDate).format("DD/MM/YYYY")}</td>
         </tr>
       ));
     setContent(tableContent);

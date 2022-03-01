@@ -168,7 +168,7 @@ const Reservations = () => {
               <span className="status-label">{_item.status}</span>
             </SmallCard>}
           </td>
-          <td>{moment(_item.created).format("DD/MM/YYYY")}</td>
+          <td>{moment(_item.createdDate).format("DD/MM/YYYY")}</td>
         </tr>
       ));
     setContent(tableContent);

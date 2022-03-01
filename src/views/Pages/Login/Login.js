@@ -9,7 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
-  const { isAuthenticated, loading } = useSelector((state) => state.auth);
+  const { isAuthenticated, loading, msg } = useSelector((state) => state.auth);
 
   function login(e) {
     dispatch(loginUser(email, password));
@@ -28,6 +28,9 @@ const Login = () => {
         <div className="signinbox bg-white">
           <div className="signin-header text-center">
             <h2 className="widget-title mb-3">Đăng nhập</h2>
+          </div>
+          <div className="form-group">
+            <span style={{ color: "#de1414cf", fontSize: "15px" }}>{msg}</span>
           </div>
           <div className="form-group">
             <label>EMAIL</label>
@@ -53,6 +56,7 @@ const Login = () => {
 
           <div className="form-group">
             <Button
+                disabled={!password || !email}
               customClass="btn--block btn--primary"
               style={{ margin: "1rem auto", height: "42px" }}
               htmlType="submit"

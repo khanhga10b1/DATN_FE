@@ -16,6 +16,7 @@ export const loginUser = (email, password) => async (dispatch) => {
   const data = {
     email: email,
     password: password,
+    isAdmin: false
   };
   dispatch({ type: LOGIN });
   try {
@@ -30,7 +31,7 @@ export const loginUser = (email, password) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: LOGIN_FAILED,
-      payload: error.response.data.message,
+      payload: error.response.data.errors[0].default_message,
     });
   }
 };
@@ -60,6 +61,7 @@ export const loginAdmin = (email, password) => async (dispatch) => {
   const data = {
     email: email,
     password: password,
+    isAdmin: true
   };
   dispatch({ type: ADMIN_LOGIN });
   try {
@@ -74,7 +76,7 @@ export const loginAdmin = (email, password) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: ADMIN_LOGIN_FAILED,
-      payload: error.response.data.message,
+      payload: error.response.data.errors[0].default_message,
     });
   }
 };

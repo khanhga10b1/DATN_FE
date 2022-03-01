@@ -55,7 +55,7 @@ const Hotels = () => {
             options={cityList.map((c) => {
               return {
                 value: c,
-                label: c,
+                label: c ? c : "Tất cả",
               };
             })}
           />{" "}

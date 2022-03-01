@@ -45,6 +45,7 @@ const Setup = () => {
               value={paypal_id}
               onChange={(e) => set_paypal_id(e.target.value)}
               required
+              disabled={true}
             />
           </div>
           <div className="row justify-flex-end">
@@ -52,7 +53,7 @@ const Setup = () => {
               customClass="btn--block btn--primary"
               style={{ width: "100px" }}
               htmlType="submit"
-              disabled={loading}
+              disabled={true}
               type="primary"
             >
               <strong>Lưu</strong>

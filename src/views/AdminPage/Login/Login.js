@@ -31,7 +31,7 @@ const Login = () => {
           <span style={{color : "red"}}>{msg}</span>
           <div className="form-group">
             <label>EMAIL</label>
-            <TextField
+            <TextField required={true}
               placeholder=""
               type="text"
               onChange={(e) => {
@@ -42,6 +42,7 @@ const Login = () => {
           <div className="form-group">
             <label>Mật khẩu</label>
             <TextField
+                required={true}
               placeholder=""
               type="password"
               onChange={(e) => {
@@ -52,6 +53,7 @@ const Login = () => {
 
           <div className="form-group">
             <Button
+                disabled={!email || !password}
               customClass="btn--block btn--primary"
               style={{ margin: "1rem auto", height: "42px" }}
               htmlType="submit"

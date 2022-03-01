@@ -67,7 +67,7 @@ const Admins = () => {
   useEffect(() => {
     const tableContent = admins
       .filter((data) => {
-        const temp = `${data.name}-${data.email}-${data.role}-${data.status}`;
+        const temp = `${data.name}-${data.email}-${data.role.name}-${data.status}`;
         return temp
           .toLocaleLowerCase()
           .includes(searchText.toLocaleLowerCase());
@@ -78,7 +78,7 @@ const Admins = () => {
           className="text-center"
           key={index}
           onClick={() => {
-            if(_item.role === "SuperAdmin") return;
+            if(_item.role.code === "SUPER_ADMIN") return;
             set_edit_modal(_item)
           }}
         >
@@ -96,27 +96,28 @@ const Admins = () => {
           </td>
           <td>{_item.name}</td>
           <td>{_item.email}</td>
-          <td>{_item.role}</td>
+          <td>{_item.role.name}</td>
           <td>
             <SmallCard
+                onClick={(e) => {
+                  if(_item.role.code ==="SUPER_ADMIN") return;
+                  e.stopPropagation()
+                  set_confirm(_item)
+                }}
               background={mappingStatus(_item.status ? "Active" : "Blocked").bg}
               color={mappingStatus(_item.status ? "Active" : "Blocked").color}
               margin="auto"
             >
-              <div className="status-label" onClick={(e) => {
-                if(_item.role ==="SuperAdmin") return;
-                e.stopPropagation()
-                set_confirm(_item)
-              }}>
+              <div className="status-label">
                 {_item.status ? "Active" : "Blocked"}
               </div>
             </SmallCard>
           </td>
-          <td>{moment(_item.created).format("DD/MM/YYYY")}</td>
-          <td>{moment(_item.updatedAt).format("DD/MM/YYYY")}</td>
+          <td>{moment(_item.createdDate).format("DD/MM/YYYY")}</td>
+          <td>{moment(_item.updatedDate).format("DD/MM/YYYY")}</td>
           <td>
             {
-              _item.role !== "SuperAdmin" && <Feather name="Trash" onClick = {(e)=> {
+              _item.role.code !== "SUPER_ADMIN" && <Feather name="Trash" onClick = {(e)=> {
                 e.stopPropagation()
                 set_delete(_item)
               }}/>

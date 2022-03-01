@@ -23,7 +23,7 @@ const TheSidebar = () => {
           {getInitialsName(admin?.name)}
         </Avatar>  <div className="row">
           {" "}
-          <span style={{ margin: "auto", fontSize: "15px" }}>{admin?.role}</span>
+          <span style={{ margin: "auto", fontSize: "15px" }}>{admin?.role.name}</span>
         </div>
         <div className="row">
           {" "}

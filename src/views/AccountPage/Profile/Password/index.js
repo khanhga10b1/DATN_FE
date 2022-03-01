@@ -40,7 +40,7 @@ const Password = () => {
       <div className="tab__content">
         <form className="card profile_card" onSubmit={onSave}>
           <div className="row">
-            <label>Mật khẩu cũ</label>
+            <label className="card_label">Mật khẩu cũ</label>
             <TextField
               value={old_pass}
               type="password"
@@ -49,7 +49,7 @@ const Password = () => {
             />
           </div>
           <div className="row">
-            <label>Mật khẩu mới</label>
+            <label className="card_label">Mật khẩu mới</label>
             <TextField
               value={new_pass}
               type="password"
