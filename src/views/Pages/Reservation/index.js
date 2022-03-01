@@ -251,6 +251,7 @@ const Payment = ({ reservation, onPrevious, onNext }) => {
             amount={(reservation.cost * (reservation.room.prepay || 0)) / 100}
             currency={"USD"}
             onSuccess={paymentHandler}
+            paypalId={reservation.hotel.paypalId}
           />
         </div>
       )}

@@ -42,9 +42,9 @@ const Dashboard = () => {
             loading: false,
             options: {
               ...chart_opt.options,
-              labels : res.data.result.map(d => d.name),
+              labels : res.data.map(d => d.name),
             },
-            series: res.data.result.map(d=>parseFloat(d.percent)),
+            series: res.data.map(d=>parseFloat(d.percent)),
           });
         })
         .catch((e) => console.log(e));

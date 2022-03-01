@@ -153,6 +153,7 @@ const Admins = () => {
     service
       .put(`/admins/${confirm.id}`, {
         status: !confirm.status,
+          changeStatus: true
       })
       .then((res) => {
         setLoading(false);

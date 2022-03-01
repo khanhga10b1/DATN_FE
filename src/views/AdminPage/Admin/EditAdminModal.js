@@ -145,7 +145,7 @@ const EditAdmin = ({ show, admin, handleClose, onEditSuccess }) => {
               <div className="row">
                 <div className="form-group" style={{ width: "100%" }}>
                   <label>email</label>
-                  <TextField
+                  <TextField disabled
                     onChange={(e) => set_email(e.target.value)}
                     value={email}
                     type="text"

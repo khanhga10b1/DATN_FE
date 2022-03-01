@@ -36,7 +36,7 @@ const AddAdmin = ({ show, handleClose, onAddSuccess }) => {
           name,
           email,
           password,
-          role: "admin"
+          roleCode: "ADMIN"
         };
         service
           .post("/admins", params)
