@@ -12,17 +12,16 @@ const RoomCalendar = ({room_reservation}) => {
     <div className="content" style={{ padding: "20px" }}>
       <Calendar
         events={room_reservation.map((r) => {
-          console.log(typeof r.checkIn, r.checkIn);
           return {
             id: r.id,
             title: `Code : ${r.code}`,
-            start: `${r.checkIn.substring(0,10)}T00:00:00.000Z`,
-            end: `${r.checkOut.substring(0,10)}T00:00:00.000Z`,
+            start:  new Date(r.checkIn),
+            end: new Date(r.checkOut),
             status: r.status,
             reservation: r,
           };
         })}
-        views={["month", "week", "agenda"]}
+        views={["month"]}
         step={60}
         onSelectEvent={(ev) => {
           dispatch(setModal(ev.reservation))

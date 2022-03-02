@@ -36,7 +36,6 @@ const Dashboard = () => {
   const [yearData, setYearData] = useState(chart_opt);
   const [year, setYear] = useState(new Date().getFullYear());
   useEffect(() => {
-    console.log(user);
     if (user) {
       service
         .get("/stat/overview", { params: { userId: user.id } })
@@ -67,7 +66,6 @@ const Dashboard = () => {
         .get("/stat/yearData", { params: { userId: user.id, year: "2020" } })
         .then((res) => {
           const year_data = res.data.find((r) => r.year === year);
-          console.log(year_data);
           setYearData({
             loading: false,
             options: {

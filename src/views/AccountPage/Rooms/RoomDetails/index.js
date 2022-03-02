@@ -24,6 +24,8 @@ const RoomDetails = ({ hotels, room, setView = () => {}, ...props }) => {
     service
       .put(`/reservations/${modal.id}`, {
         ...modal,
+        checkIn: moment(modal.checkIn).format('DD/MM/yyyy'),
+        checkOut: moment(modal.checkOut).format('DD/MM/yyyy'),
         status: params.status,
         cancelReason: params.reason,
       })
@@ -150,8 +152,8 @@ const RoomDetails = ({ hotels, room, setView = () => {}, ...props }) => {
                       <div className="col-6 no-padding justify-flex-end">
                         <label style={{ marginRight: "20px" }}>Khách</label>
                         <span>
-                          {modal.guests.adult}{" "}người lớn {" "}-{" "}
-                          {modal.guests.children} trẻ em
+                          {modal.adult}{" "}người lớn {" "}-{" "}
+                          {modal.children} trẻ em
                           </span>
                       </div>
                     </div>

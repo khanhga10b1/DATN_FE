@@ -25,13 +25,13 @@ const Details = ({ room, setView = () => {}, ...props }) => {
           </h4>
           {room.image && (
             <div style={{ margin: "auto" }}>
-              <Slide easing="ease" pauseOnHover={true} duration={3000}>
+              <Slide  easing="ease" pauseOnHover={true} duration={2000} >
                 {room.image.map((img) => (
                   <div
-                    className="fill"
-                    key={img}
-                    style={{ backgroundImage: `url(${img})` }}
-                  ></div>
+    className="fill"
+    key={img}
+    style={{backgroundImage: `url(${img})`}}
+    />
                 ))}
               </Slide>
             </div>

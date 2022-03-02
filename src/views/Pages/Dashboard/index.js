@@ -220,7 +220,7 @@ const Dashboard = () => {
               <Slide
                 easing="ease"
                 // pauseOnHover={true}
-                duration={5000}
+                duration={3000}
                 // autoplay={false}
               >
                 {hotels.map((hotel) => (

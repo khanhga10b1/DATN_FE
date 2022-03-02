@@ -141,7 +141,7 @@ const Room = (props) => {
                   </span>
                 </h4>
                 {room.image && (
-                  <Slide easing="ease" pauseOnHover={true} duration={3000}>
+                  <Slide easing="ease" pauseOnHover={true} duration={2000}>
                     {room.image.map((img) => (
                       <div
                         className="fill"

@@ -28,13 +28,10 @@ const RoomCalendar = ({room}) => {
     <div className="content" style={{ padding: "20px" }}>
       <Calendar
         events={room_reservation.map((r) => {
-          const _out = new Date(r.checkOut)
-          _out.setDate(_out.getDate() +1)
           return {
             id: r.id,
-            // title: `Code : ${r.code}`,
-            start: `${r.checkIn}`,
-            end: `${_out}`,
+            start: new Date(r.checkIn),
+            end: new Date(r.checkOut),
           };
         })}
         views={["month"]}
@@ -47,9 +44,9 @@ const RoomCalendar = ({room}) => {
         localizer={localizer}
         eventPropGetter={(event, start, end, isSelected) => {
           let newStyle = {
-            backgroundColor: "#aeaeae `",
-            height : "50px",
+            backgroundColor: "#f30202",
             color: "white",
+              height: "50px",
             border: "none",
           };
           return {
