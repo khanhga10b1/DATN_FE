@@ -6,6 +6,7 @@ export const LOGIN = 'LOGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILED = 'LOGIN_FAILED';
 export const LOGOUT = 'LOGOUT';
+export const LOGOUT_ADMIN = 'LOGOUT_ADMIN';
 
 export const ADMIN_LOADED = 'ADMIN_LOADED';
 export const ADMIN_LOGIN = 'ADMIN_LOGIN';

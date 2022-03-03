@@ -58,6 +58,7 @@ const Information = () => {
     handleFireBaseUpload()
       .then((image) => {
         const params = {
+          ...admin,
           avatar: image[0] || avatar,
           name,
         };

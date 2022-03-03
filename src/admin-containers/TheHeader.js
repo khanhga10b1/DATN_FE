@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../actions/auth";
+import {logout, logoutAdmin} from "../actions/auth";
 import { Feather } from "../components";
 
 const TheHeader = () => {
@@ -9,7 +9,7 @@ const TheHeader = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logoutAdmin());
     history.push("/admin/login");
   };
   return (

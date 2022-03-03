@@ -10,7 +10,7 @@ import {
   ADMIN_LOGIN,
   ADMIN_LOGIN_FAILED,
   ADMIN_LOGIN_SUCCESS,
-  ADMIN_LOADED,
+  ADMIN_LOADED, LOGOUT_ADMIN,
 } from "../../actions/types";
 
 const initialState = {
@@ -84,15 +84,23 @@ export default (state = initialState, action) => {
       };
     case LOGOUT:
       localStorage.removeItem("token");
-      localStorage.removeItem("admin_token");
 
       return {
         ...state,
         token: null,
-        adminToken: null,
         user: null,
-        admin: null,
         isAuthenticated: false,
+        loading: false,
+        msg: "",
+      };
+
+    case LOGOUT_ADMIN:
+      localStorage.removeItem("admin_token");
+
+      return {
+        ...state,
+        adminToken: null,
+        admin: null,
         isAdminAuthenticated: false,
         loading: false,
         msg: "",

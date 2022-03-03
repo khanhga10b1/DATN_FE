@@ -9,7 +9,7 @@ import {
   ADMIN_LOGIN,
   ADMIN_LOGIN_SUCCESS,
   ADMIN_LOGIN_FAILED,
-  ADMIN_LOADED,
+  ADMIN_LOADED, LOGOUT_ADMIN,
 } from "./types";
 
 export const loginUser = (email, password) => async (dispatch) => {
@@ -56,6 +56,12 @@ export const logout = () => async (dispatch) => {
     type: LOGOUT,
   });
 };
+
+export const logoutAdmin = () => async (dispatch) => {
+  dispatch({
+    type: LOGOUT_ADMIN,
+  });
+}
 
 export const loginAdmin = (email, password) => async (dispatch) => {
   const data = {
