@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 import { loginUser } from "../../actions/auth";
 import service from "../../service/service";
 const CLIENT_ID =
-  "594126844293-85fch2k2l9svesole64qhfkfjjb0mv69.apps.googleusercontent.com";
+  "441604146686-k7mg4hfmc2n4bpqeal7va2vo6927eqsn.apps.googleusercontent.com";
 
 const GoogleBtn = () => {
   const dispatch = useDispatch();
