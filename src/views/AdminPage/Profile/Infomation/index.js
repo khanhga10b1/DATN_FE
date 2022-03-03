@@ -110,7 +110,7 @@ const Information = () => {
                 withIcon={true}
                 buttonText="Chọn hình ảnh"
                 onChange={(pic) => onDrop(pic)}
-                imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                imgExtension={[".jpg", ".gif", ".png", ".gif", ".jpeg"]}
                 maxFileSize={5242880}
               />
             )}
