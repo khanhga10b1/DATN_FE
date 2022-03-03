@@ -17,7 +17,7 @@ import {
 } from "@material-ui/pickers";
 import service from "../../../service/service";
 import DateFnsUtils from "@date-io/date-fns";
-import { diffDays } from "../../../utils/dateUtil";
+import {dateWithOutTime, diffDays} from "../../../utils/dateUtil";
 import { useSelector } from "react-redux";
 import { mappingStatus } from "../../../utils/statusUtil";
 import InforModal from "./InforModal";
@@ -177,6 +177,9 @@ const MyReservations = () => {
                   name="checkInFrom"
                   format="dd/MM/yyyy"
                   onChange={(date) => {
+                    if(dateWithOutTime(date) > dateWithOutTime(checkInTo)) {
+                      setCheckinTo(date);
+                    }
                     setCheckinFrom(date);
                   }}
                   KeyboardButtonProps={{
@@ -194,6 +197,9 @@ const MyReservations = () => {
                   format="dd/MM/yyyy"
                   onChange={(date) => {
                     setCheckinTo(date);
+                  }}
+                  shouldDisableDate={d => {
+                    return dateWithOutTime(d) < dateWithOutTime(checkInFrom);
                   }}
                   KeyboardButtonProps={{
                     "aria-label": "change date",
@@ -213,6 +219,9 @@ const MyReservations = () => {
                   name="checkOutFrom"
                   format="dd/MM/yyyy"
                   onChange={(date) => {
+                    if(dateWithOutTime(date) > dateWithOutTime(checkOutTo)) {
+                      setCheckOutTo(date);
+                    }
                     setCheckOutFrom(date);
                   }}
                   KeyboardButtonProps={{
@@ -230,6 +239,9 @@ const MyReservations = () => {
                   format="dd/MM/yyyy"
                   onChange={(date) => {
                     setCheckOutTo(date);
+                  }}
+                  shouldDisableDate={d => {
+                    return dateWithOutTime(d) < dateWithOutTime(checkOutFrom);
                   }}
                   KeyboardButtonProps={{
                     "aria-label": "change date",

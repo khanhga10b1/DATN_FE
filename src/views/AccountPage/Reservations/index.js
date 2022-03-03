@@ -19,7 +19,7 @@ import {
 } from "@material-ui/pickers";
 import service from "../../../service/service";
 import DateFnsUtils from "@date-io/date-fns";
-import { diffDays } from "../../../utils/dateUtil";
+import {dateWithOutTime, diffDays} from "../../../utils/dateUtil";
 import { useSelector } from "react-redux";
 import { mappingStatus } from "../../../utils/statusUtil";
 const Reservations = () => {
@@ -395,6 +395,9 @@ const Reservations = () => {
                   name="checkInFrom"
                   format="dd/MM/yyyy"
                   onChange={(date) => {
+                      if(dateWithOutTime(date) > dateWithOutTime(checkInTo)) {
+                          setCheckinTo(date);
+                      }
                     setCheckinFrom(date);
                   }}
                   KeyboardButtonProps={{
@@ -416,6 +419,9 @@ const Reservations = () => {
                   KeyboardButtonProps={{
                     "aria-label": "change date",
                   }}
+                  shouldDisableDate={d => {
+                      return dateWithOutTime(d) < dateWithOutTime(checkInFrom);
+                  }}
                 />
               </Grid>
             </MuiPickersUtilsProvider>
@@ -431,6 +437,9 @@ const Reservations = () => {
                   name="checkOutFrom"
                   format="dd/MM/yyyy"
                   onChange={(date) => {
+                      if(dateWithOutTime(date) > dateWithOutTime(checkOutTo)) {
+                          setCheckOutTo(date);
+                      }
                     setCheckOutFrom(date);
                   }}
                   KeyboardButtonProps={{
@@ -448,6 +457,9 @@ const Reservations = () => {
                   format="dd/MM/yyyy"
                   onChange={(date) => {
                     setCheckOutTo(date);
+                  }}
+                  shouldDisableDate={d => {
+                      return dateWithOutTime(d) < dateWithOutTime(checkOutFrom);
                   }}
                   KeyboardButtonProps={{
                     "aria-label": "change date",
