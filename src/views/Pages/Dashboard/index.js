@@ -62,7 +62,7 @@ const Dashboard = () => {
 
         {/* welcome  */}
         <div className="welcome">
-          <h1 className="row">The K System</h1>
+          <h1 className="row">The K Booking</h1>
           <div className="row booking-form">
             <div className="welcome__block">
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
