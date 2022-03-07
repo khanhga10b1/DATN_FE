@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { PayPalButton } from "react-paypal-button-v2";
-import { useSelector } from "react-redux";
 
 const PayPalBtn = ( { amount, onSuccess, currency, paypalId } ) => {
-  const { user } = useSelector((state) => state.auth);
-  console.log(user.paypalId);
   return (
     <PayPalButton
       amount={amount}

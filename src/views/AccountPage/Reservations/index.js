@@ -96,8 +96,8 @@ const Reservations = () => {
       .get("/reservations/filter", {
         params: {
             hotelId: hotels[0].id,
-            status: filterStatus,
-            roomIds: filterRoom?.map(room => room.id).join(","),
+            status: filterStatus.join(","),
+            roomIds: filterRoom?.join(","),
             checkInFrom: checkInFrom,
             checkInTo: checkInTo,
             checkOutFrom: checkOutFrom,

@@ -1,7 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/storage'
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyBNS9VuJ5-bg-866IZVgjlahlOkLols8u4",
   authDomain: "booking-image.firebaseapp.com",
   databaseURL: "https://booking-image-default-rtdb.firebaseio.com",
