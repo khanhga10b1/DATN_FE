@@ -10,6 +10,7 @@
 
 html {
   font-size: 15px;
+  overflow-x: hidden;
 
   @media (max-width: 767px) {
     font-size: 8px;
@@ -2093,6 +2094,12 @@ section {
   }
 }
 
+@media (max-width: 1390px) {
+  .hotel__item {
+    margin: 15px 25px;
+  }
+}
+
 .visit_button {
   background: white;
   border: 1px solid #ffa37b;
@@ -2517,9 +2524,6 @@ $price-tag-dot-background: #fff;
   max-width: 1300px;
 }
 
-.hotel-reservation {
-  padding: 2rem
-}
 
 .MuiTypography-body2 {
   font-size: 16px !important;

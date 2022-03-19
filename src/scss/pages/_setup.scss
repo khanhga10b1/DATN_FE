@@ -85,6 +85,17 @@
         animation: LeftToRight 0.25s;
       }
     }
+
+
+    @media (max-width: 1390px) {
+      .leftbar {
+        width: 250px;
+      }
+      .main-menu {
+        width: calc(100vw - 257px);
+        left: 250px;
+      }
+    }
   }
 
   .block {
