@@ -62,7 +62,7 @@ const Details = ({ room, setView = () => {}, ...props }) => {
               <div className="row">
                 {room.rules &&
                   room.rules.map((rule, index) => (
-                    <div className="col-md-6" key ={index}>
+                    <div  key ={index}>
                       <img
                         src={Pin}
                         width="20px"

@@ -76,15 +76,14 @@ const Reservations = () => {
         .then((res) => {
           setRooms(res.data.rooms);
           setFilterByRoom(res.data.rooms);
+          onSearchRequestHandler(hotels[0].id);
         })
         .catch((err) => {
           console.log(err);
           setLoading(false);
         });
-      onSearchRequestHandler(hotels[0].id);
     } else setLoading(false);
   }, [hotels]);
-
   useEffect(() => {
     fetchOwnHotels();
   }, []);

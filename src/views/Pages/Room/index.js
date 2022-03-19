@@ -252,6 +252,8 @@ const Room = (props) => {
                         <label className="row">Người lớn</label>
                         <TextField
                           type="number"
+                          min="0"
+                          max="5"
                           defaultValue={adult}
                           onChange={(e) => setAdult(e.target.value)}
                           required
@@ -261,6 +263,8 @@ const Room = (props) => {
                         <label className="row">Trẻ em </label>
                         <TextField
                           type="number"
+                          min="0"
+                          max="5"
                           defaultValue={children}
                           onChange={(e) => setChildren(e.target.value)}
                           required
