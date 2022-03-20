@@ -59,7 +59,7 @@ const Rooms = (props) => {
         <div className="welcome">
           <h1 className="row" style ={{textAlign : "center"}}>{hotel.name}</h1>
           <div className="row">
-            <span style = {{margin : "auto", color : "#ff8939", fontWeight: "bold", fontSize : "25px"}}>{hotel.rate}</span>
+            <span style = {{margin : "auto", color : "#ff8939", fontWeight: "bold", fontSize : "25px"}}>{Math.round(hotel.rate*10)/10}</span>
           </div>
           <div className="row">
             <StarRatings

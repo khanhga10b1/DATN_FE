@@ -129,7 +129,7 @@ const Dashboard = () => {
                     {top.name}
                   </span>
                   <div className="col-4">
-                  <span style={{marginRight:"10px"}}>{top.rate || 0}</span>
+                  <span style={{marginRight:"10px"}}>{Math.round(top.rate*10)/10 || 0}</span>
                     <StarRating
                       rating={top.rate || 0}
                       starRatedColor="#ff8939"
